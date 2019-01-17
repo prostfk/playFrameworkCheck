@@ -1,0 +1,22 @@
+@import java.util
+@import helper._
+@(id: Long, companyForm: Form[Company])
+
+@main {
+
+    <h1>Edit company</h1>
+
+    @form(routes.CompanyController.processEdit()){
+
+        <fieldset>
+            @CSRF.formField
+            @inputText(companyForm("id"), '_label -> "", '_help -> "", 'type -> "hidden")
+            @inputText(companyForm("name"), '_label -> "Company name", '_help -> "")
+
+        </fieldset>
+
+        <button class="btn primary">Submit</button>
+
+    }
+
+}

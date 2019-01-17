@@ -19,6 +19,8 @@ POST    /computers/:id              controllers.HomeController.update(id:Long)
 # Delete a computer
 POST    /computers/:id/delete       controllers.HomeController.delete(id:Long)
 
+GET     /company/:id                controllers.CompanyController.editCompany(id: Long)
+POST    /company/                   controllers.CompanyController.processEdit()
+
 # Map static resources from the /public folder to the /assets URL path
 GET     /assets/*file               controllers.Assets.at(path="/public", file)
-

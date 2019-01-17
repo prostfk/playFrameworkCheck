@@ -4,8 +4,6 @@ import play.data.validation.Constraints;
 
 import javax.persistence.Entity;
 
-
-
 /**
  * Company entity managed by Ebean
  */
@@ -17,5 +15,12 @@ public class Company extends BaseModel {
     @Constraints.Required
     public String name;
 
+    @Override
+    public String toString() {
+        return "Company{" +
+                "name='" + name + '\'' +
+                ", id=" + id +
+                '}';
+    }
 }
 

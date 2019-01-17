@@ -60,6 +60,7 @@ public class HomeController extends Controller {
      */
     public CompletionStage<Result> list(int page, String sortBy, String order, String filter) {
         // Run a db operation in another thread (using DatabaseExecutionContext)
+        System.out.println(String.format("%d,%s,%s,%s", page,sortBy,order,filter));
         return computerRepository.page(page, 10, sortBy, order, filter).thenApplyAsync(list -> {
             // This is the HTTP rendering thread context
             return ok(views.html.list.render(list, sortBy, order, filter));
